@@ -36,7 +36,7 @@ Route::apiResource('/categories', CategoryApiController::class)
 //     }
 
 //     return response(['msg' => 'invalid email or password'], 403);
-// });
+// })->middleware('auth-senctum');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

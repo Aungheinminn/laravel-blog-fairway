@@ -18,9 +18,7 @@
             </div>
             <div class="mb-2">
                 <label for="">Body</label>
-                <textarea name="body" class="form-control">
-                    {{ $article->body }}
-                </textarea>
+                <textarea name="body" class="form-control">{{ $article->body }}</textarea>
             </div>
             <div class="mb-2">
                 <label for="">Category</label>

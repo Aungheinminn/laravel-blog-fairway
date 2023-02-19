@@ -90,7 +90,7 @@ class ArticleController extends Controller
          'category' => $category
       ]);
    }
-
+   
    public function updated($id){
 
       $validator = validator(request()->all(),[
@@ -103,12 +103,14 @@ class ArticleController extends Controller
          return back()->withErrors($validator);
       }
 
-      $article = new Article;
+      // $article = new Article;
+
+      $article = Article::find($id);
       $article->title = request()->title;
       $article->body = request()->body;
       $article->category_id = request()->category_id;
       $article->user_id = auth()->user()->id;
-      $article->save();
+      $article->update();
 
       return redirect('/articles')->with('info','an article is updated');
    }
